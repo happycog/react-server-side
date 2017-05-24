@@ -1,12 +1,14 @@
 const React = require('react');
-// require('Home.css');
+const axios = require('axios');
 
-module.exports = class extends React.Component {
-  // controller() {
-  //   return data;
-  // }
-
+class Home extends React.Component {
   render() {
-    return React.createElement('p', {}, 'Hello World');
+    return React.createElement('p', {}, 'There are '+this.props.bus.length+' busses out right now.');
   }
 }
+
+Home.defaultProps = {
+  bus: []
+};
+
+module.exports = Home;
